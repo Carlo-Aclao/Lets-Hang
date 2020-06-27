@@ -1,0 +1,169 @@
+plugins:
+  - serverless-python-requirements
+
+service: letshang
+
+provider:
+  name: aws
+  runtime: python3.7
+  environment:
+    JWT_SECRET: 'secret'
+    AMADEUS_ID: 'RcsRacwRrmqGSGakeRdAxe3HpDH67HdV'
+    AMADEUS_SECRET: 'Arx5psRbYJ4kI9UM'
+    TM_KEY: 'TSz3OsjHtFMCD0O5CXKOUsOXwEHtuG4Q'
+    TM_SECRET: 'APGuMjmmGE9iXJvA'
+    SG_CLIENTID: 'MjExNjQ0MzJ8MTU4Nzg4Nzg1NC40Mw'
+    SG_SECRET: '8359bb16842ecf337f0d13036c4b885e5e103264b5374450d3ed7b6c0fdc3799'
+
+
+functions:
+  register:
+    handler: handler.register
+    events:
+      - http:
+          path: register1
+          method: post
+  get_users:
+    handler: handler.get_users
+    events:
+      - http:
+          path: get_users
+          method: get
+  login1:
+    handler: handler.login1
+    events:
+      - http:
+          path: login1
+          method: post
+  create_post:
+    handler: handler.create_post
+    events:
+      - http:
+          path: create_post
+          method: post
+  get_flight:
+    handler: handler.get_flight
+    timeout: 30
+    events:
+      - http:
+          path: get_flight
+          method: post
+  find_airports:
+    handler: handler.find_airports
+    events:
+      - http:
+          path: find_airports
+          method: post
+  getEvents:
+    handler: handler.getEvents
+    events:
+      - http:
+          path: getEvents
+          method: post
+  home:
+    handler: handler.home
+    events:
+      - http:
+          path: home
+          method: post
+  createPlan:
+    handler: handler.createPlan
+    events:
+      - http:
+          path: createPlan
+          method: post
+  addEvent:
+    handler: handler.addEvent
+    events:
+      - http:
+          path: addEvent
+          method: post
+  getPlanDetails:
+    handler: handler.getPlanDetails
+    events:
+      - http:
+          path: getPlanDetails
+          method: post
+  addFlight:
+    handler: handler.addFlight
+    events:
+      - http:
+          path: addFlight
+          method: post
+  findHotels:
+    handler: handler.findHotels
+    timeout: 40
+    events:
+      - http:
+          path: findHotels
+          method: post
+  addHotel:
+    handler: handler.addHotel
+    events:
+      - http:
+          path: addHotel
+          method: post
+  send_friend_request:
+    handler: handler.send_friend_request
+    events:
+      - http:
+          path: send_friend_request
+          method: post
+  accept_friend_request:
+    handler: handler.accept_friend_request
+    events:
+      - http:
+          path: accept_friend_request
+          method: post
+  get_friend_requests:
+    handler: handler.get_friend_requests
+    events:
+      - http:
+          path: get_friend_requests
+          method: post
+  get_hotel_city:
+    handler: handler.get_hotel_city
+    events:
+      - http:
+          path: get_hotel_city
+          method: post
+  get_hotels:
+    handler: handler.get_hotels
+    events:
+      - http:
+          path: get_hotels
+          method: post
+  get_hotel_offers:
+    handler: handler.get_hotel_offers
+    events:
+      - http:
+          path: get_hotel_offers
+          method: post
+  user_serch:
+    handler: handler.user_serch
+    events:
+      - http:
+          path: user_serch
+          method: post
+  send_message:
+    handler: handler.send_message
+    events:
+      - http:
+          path: send_message
+          method: post
+  get_messages:
+    handler: handler.get_messages
+    events:
+      - http:
+          path: get_messages
+          method: post
+  addFriendToPlan:
+    handler: handler.addFriendToPlan
+    events:
+      - http:
+          path: addFriendToPlan
+          method: post
+  
+
+        
+    
